@@ -3,8 +3,8 @@ describe.only('the palindrome canary spec', () => {
     true.should.be.true();
   });
 
-  let isPalindrome = (word) => {
-    return word === word.split('').reverse().join('');
+  let isPalindrome = (phrase) => {
+    return phrase === phrase.split('').reverse().join('');
   };
 
   describe('a palindrome should', () => {
@@ -12,11 +12,21 @@ describe.only('the palindrome canary spec', () => {
       isPalindrome('mom').should.be.true();
     });
 
-    it('false for dude');
-    it('true for a');
-    it('true for mom dad mom');
+    it('false for dude', () => {
+      isPalindrome('dude').should.be.false();
+    });
 
-    it('false for ""');
-    it('false for "       "');
+    it('true for a', () => {
+          isPalindrome('a').should.be.true();
+    });
+    it('true for mom dad mom', () => {
+          isPalindrome('mom dad mom').should.be.true();
+    });
+    it('false for ""', () => {
+      isPalindrome('').should.be.true();
+    });
+    it('false for "       "', () => {
+      isPalindrome('     ').should.be.true();
+    });
   });
 });
