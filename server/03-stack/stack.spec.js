@@ -1,4 +1,4 @@
-describe('the stack', () => {
+describe.only('the stack', () => {
   it('starts empty');
   it('starts with stack size 0');
   it('is not be empty when pushed');
