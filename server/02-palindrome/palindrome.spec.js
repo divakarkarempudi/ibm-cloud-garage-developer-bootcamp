@@ -4,6 +4,9 @@ describe.only('the palindrome canary spec', () => {
   });
 
   let isPalindrome = (phrase) => {
+    if (phrase.trim() === '') {
+       return false;
+    }
     return phrase === phrase.split('').reverse().join('');
   };
 
@@ -23,10 +26,10 @@ describe.only('the palindrome canary spec', () => {
           isPalindrome('mom dad mom').should.be.true();
     });
     it('false for ""', () => {
-      isPalindrome('').should.be.true();
+      isPalindrome('').should.be.false();
     });
     it('false for "       "', () => {
-      isPalindrome('     ').should.be.true();
+      isPalindrome('   ').should.be.false();
     });
   });
 });
