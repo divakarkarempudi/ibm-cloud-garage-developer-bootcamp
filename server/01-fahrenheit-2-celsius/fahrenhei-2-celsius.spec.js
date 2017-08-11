@@ -3,16 +3,16 @@ describe('the fahrenheit2celsius canary spec', () => {
     true.should.be.true();
   });
 
-  function fahrenheit2celsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
-  }
+  let fahrenheit2celsius = (fahrenheit) => {
+    return (fahrenheit - 32) * (5 / 9);
+  };
 
-  describe('fahrenheit2celsius should', () => {
-    it('', () => {
+  describe('fahrenheit2celsius', () => {
+    it('fahrenheit2celsius returns 0 given 32', () => {
       fahrenheit2celsius(32).should.equal(0);
     });
 
-    it('farenheit2celcius(50) is 10', () => {
+    it('fahrenheit2celsius returns 10 given 50', () => {
       fahrenheit2celsius(50).should.equal(10);
     });
   });
