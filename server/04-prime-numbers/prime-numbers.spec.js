@@ -1,2 +1,2 @@
-describe('the prime numbers canary spec', () => {
+describe.only('the prime numbers canary spec', () => {
 });
