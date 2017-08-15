@@ -3,6 +3,37 @@ import {Movie} from './Movie';
 let Customer = (name) => {
   let rentals = [];
 
+  function amountFor(aRental) {
+    let result = 0;
+    //noinspection Eslint
+    switch (aRental.movie.priceCode) {
+      case Movie.REGULAR:
+
+        result += 2;
+        if (aRental.daysRented > 2) {
+          result += (aRental.daysRented - 2) * 1.5;
+        }
+        break;
+
+      case Movie.NEW_RELEASE:
+
+        result += aRental.daysRented * 3;
+        break;
+
+      case Movie.CHILDRENS:
+
+        result += 1.5;
+        if (aRental.daysRented > 3) {
+          result += (aRental.daysRented - 3) * 1.5;
+        }
+
+        break;
+      default:
+
+    }
+    return result;
+  }
+
   return {
     get name() { return name; },
     addRental(rental) { rentals.push(rental); },
@@ -15,33 +46,7 @@ let Customer = (name) => {
       for (let i = 0; i < rentals.length; i++) {
         let thisAmount = 0;
         let each = rentals[i];
-
-        //noinspection Eslint
-        switch (each.movie.priceCode) {
-          case Movie.REGULAR:
-
-            thisAmount += 2;
-            if (each.daysRented > 2) {
-              thisAmount += (each.daysRented - 2) * 1.5;
-            }
-            break;
-
-          case Movie.NEW_RELEASE:
-
-            thisAmount += each.daysRented * 3;
-            break;
-
-          case Movie.CHILDRENS:
-
-            thisAmount += 1.5;
-            if (each.daysRented > 3) {
-              thisAmount += (each.daysRented - 3) * 1.5;
-            }
-
-            break;
-          default:
-
-        }
+        thisAmount = amountFor(each);
 
         // add frequent renter points
         frequentRenterPoints++;
