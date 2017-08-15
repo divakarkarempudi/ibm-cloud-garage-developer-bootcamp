@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-describe.only('the prime numbers canary spec', () => {
+describe('the prime numbers canary spec', () => {
   it('shows test infrastructure works ', () => {
     true.should.be.true();
   });
