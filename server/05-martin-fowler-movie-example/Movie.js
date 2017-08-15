@@ -1,4 +1,4 @@
-let makeMovieFrom = (title, somePriceCode) => {
+let Movie = (title, somePriceCode) => {
   let priceCode = somePriceCode;
 
   return {
@@ -8,4 +8,8 @@ let makeMovieFrom = (title, somePriceCode) => {
   };
 };
 
-export {makeMovieFrom};
+Movie.REGULAR = 0;
+Movie.NEW_RELEASE = 1;
+Movie.CHILDRENS = 2;
+
+export {Movie};

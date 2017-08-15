@@ -1,4 +1,4 @@
-let makeRentalFrom = (movie, daysRented) => {
+let Rental = (movie, daysRented) => {
 
   return {
     get movie() { return movie; },
@@ -6,4 +6,4 @@ let makeRentalFrom = (movie, daysRented) => {
   };
 };
 
-export {makeRentalFrom};
+export {Rental};
