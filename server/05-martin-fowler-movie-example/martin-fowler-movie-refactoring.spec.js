@@ -2,7 +2,7 @@ import {Customer} from './Customer';
 import {Movie} from './Movie';
 import {Rental} from './Rental';
 
-describe.only('martin fowler\'s movie refactoring example', () => {
+describe('martin fowler\'s movie refactoring example', () => {
   const DAYS_RENTED_IS_1 = 1;
   const DAYS_RENTED_IS_2 = 2;
   const DAYS_RENTED_IS_3 = 3;

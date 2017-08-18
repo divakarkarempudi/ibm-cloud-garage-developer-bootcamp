@@ -1,6 +1,6 @@
 import * as months from './months';
 
-describe.only('Months', () => {
+describe('Months', () => {
   it('canary test should pass', () => {
     true.should.be.true();
   });
